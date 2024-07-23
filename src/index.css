@@ -1,0 +1,408 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --primary-050: #e0e6ed;
+  --primary-100: #d0d5db;
+  --primary-200: #b9c0c9;
+  --primary-300: #a1abb7;
+  --primary-400: #8a96a6;
+  --primary-500: #728194;
+  --primary-600: #5b6c82;
+  --primary-700: #435770;
+  --primary-800: #2c425e;
+  --primary-900: #142d4c;
+
+  --secondary-050: #e3e8ee;
+  --secondary-100: #d7dce2;
+  --secondary-200: #c3cbd4;
+  --secondary-300: #afb9c6;
+  --secondary-400: #9ca8b8;
+  --secondary-500: #8897a9;
+  --secondary-600: #74859b;
+  --secondary-700: #60748d;
+  --secondary-800: #4c627e;
+  --secondary-900: #385170;
+
+  /* grey */
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
+  /* rest of the colors */
+  --black: #222;
+  --white: #fff;
+  --green-light: #7fa99f;
+  --green-dark: #506a64;
+  --background-color: #ececec;
+  --background-color-dark: #cacaca;
+
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+  /* rest of the vars */
+  /* --backgroundColor: var(--grey-50); */
+  --textColor: var(--grey-900);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  --fluid-width: 90vw;
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  background: rgba(250, 250, 249, 0.5);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* form */
+
+.form {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  background: var(--background-secondary-color);
+  padding: 2rem 2.5rem;
+  margin: 5rem auto;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--small-text);
+  margin-bottom: 0.35rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing);
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--primary-600);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--border-radius);
+  background: var(--secondary-050);
+  /* border: 2px solid var(--grey-300); */
+  border: none;
+  border-bottom: 3px solid var(--background-color-dark);
+  color: var(--primary-700);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.form-input:focus-within,
+.form-text:focus-within {
+  border-bottom: 3px solid var(--primary-400);
+}
+
+.form-input .form-input,
+.form-select,
+.form-btn {
+  height: 35px;
+}
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-textarea {
+  height: 7rem;
+}
+::placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+header > .title {
+  text-align: center;
+  align-items: center;
+  flex: 1;
+}
+
+header > .title {
+  @media (max-width: 64em) {
+    text-align: left;
+  }
+}
+
+.projectsTitle {
+  color: var(--white);
+  margin-top: 1rem;
+}
+/* 
+==================
+page container
+===================
+*/
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-900);
+
+  @media (min-width: 64em) {
+    flex-direction: row;
+  }
+}
+
+.main {
+  background: var(--white);
+
+  flex: 1;
+  height: 100vh;
+  margin-top: 1rem;
+  border-top-left-radius: 32px;
+}
+
+.createContainer {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  background: var(--background-secondary-color);
+  padding: 2rem 2.5rem;
+  margin: 6rem auto;
+  text-align: center;
+}
+
+.createContainer > * {
+  margin-bottom: 2rem;
+}
+
+.createContainer h2 {
+  color: var(--primary-800);
+}
+
+.createContainer p {
+  color: var(--primary-600);
+}
+
+.imgTask {
+  width: 40px;
+}
+/* 
+==================
+Sidebar Navigation
+===================
+*/
+.nav {
+  position: fixed;
+  top: 4rem;
+  bottom: 0;
+  width: 19.5rem;
+  padding: 0.25rem 0.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  background: var(--primary-900);
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 300ms;
+
+  &.isMobileMenuOpen {
+    transform: translateX(0);
+  }
+  @media (min-width: 64em) {
+    position: relative;
+    top: 0;
+    width: 100%;
+    /* width: calc(100% - 2rem); */
+    padding: 0 1rem 2rem;
+
+    transform: none;
+  }
+}
+
+.sidebarContainer,
+.fixedContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 64em) {
+    width: 17.5rem;
+    height: 100%;
+  }
+}
+
+.fixedContainer {
+  position: fixed;
+  z-index: 1000;
+}
+
+.header {
+  width: 100%;
+  /* width: calc(100% - 2 * 1rem); */
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: var(--primary-900);
+  position: relative;
+  z-index: 1000;
+  color: var(--secondary-200);
+
+  @media (min-width: 64em) {
+    height: unset;
+    padding: 3rem 1rem 1.5rem;
+  }
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--grey-200);
+  z-index: 999;
+  transform: translate(100%);
+  opacity: 0;
+  /* property name | duration | delay */
+  /* We delay tranformation 5000ms for opacity to change from 0.9 to 0. Then we quickly tranform overlay-move from on screen to off-screen */
+  transition: opacity 300ms, transform 0ms 300ms;
+
+  &.isMobileMenuOpen {
+    opacity: 0.6;
+    transform: translateX(0);
+    /* overlay instantly moves from 100% right of screen to 0%.
+      Then, opacity takes 300ms to transition from 0 to 0.9
+    */
+    transition: opacity 300ms;
+  }
+  @media (min-width: 64em) {
+    display: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+.navBtn {
+  width: 100%;
+  cursor: pointer;
+  color: var(--secondary-300);
+  background: var(--primary-900);
+  padding-left: 1.255rem;
+  border: transparent;
+  border-radius: var(--borderRadius);
+  letter-spacing: var(--letterSpacing);
+  padding: 0.75rem 1.255rem;
+  transition: var(--transition);
+  display: inline-block;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.navBtn:hover {
+  background: var(--primary-700);
+  color: var(--secondary-100);
+}
+
+/* 
+==================
+Button
+===================
+*/
+
+.btn {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--primary-500);
+  border: transparent;
+  border-radius: var(--borderRadius);
+  letter-spacing: var(--letterSpacing);
+  padding: 0.75rem 1.255rem;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  text-transform: capitalize;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  background: var(--primary-700);
+  box-shadow: var(--shadow-3);
+}
+
+.menuButton {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  appearance: none;
+
+  @media (min-width: 64em) {
+    display: none;
+  }
+}
+
+.menuIcon {
+  display: block;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.btnClear {
+  background-color: transparent;
+  color: var(--primary-900);
+  border: none;
+  box-shadow: none;
+}
+
+.btnClear:hover {
+  background: none;
+  box-shadow: none;
+}
