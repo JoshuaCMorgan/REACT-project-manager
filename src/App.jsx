@@ -1,3 +1,4 @@
+import { Project } from "./components/Project";
 import { useState } from "react";
 import { Home } from "./components/Home";
 import { ProjectsSidebar } from "./components/ProjectsSidebar";
@@ -7,15 +8,15 @@ import { useLocalStorage } from "./components/useLocalStorage";
 
 function App() {
   /*
-  currentAction: "nothing-selected" | "add-tasks" | create-project"
+  currentAction: "nothing-selected" | "project-page" | create-project"
 */
   const [currentAction, setCurrentAction] = useState("nothing-selected");
-  const [selectedProject, setSelectedProject] = useState(undefined);
+  const [selectedProjectId, setSelectedProjectId] = useState(undefined);
   const [projects, setProjects] = useLocalStorage("projects", []);
 
   // const [projectsState, setProjectsState] = useState({
   //   currentAction: "nothing-selected",
-  //   selectedProject: undefined,
+  //   selectedProjectId: undefined,
   //   projects: useLocalStorage("projects", []),
   // });
 
@@ -35,6 +36,12 @@ function App() {
             }}
           />
         );
+      case "project-page":
+        const currentProject = projects.find(
+          (project) => project.id === selectedProjectId
+        );
+
+        return <Project {...currentProject} />;
       default:
         return (
           <Home
@@ -53,6 +60,10 @@ function App() {
           setCurrentAction("create-project");
         }}
         projects={projects}
+        setSelectedProject={(id) => {
+          setSelectedProjectId(id);
+          setCurrentAction("project-page");
+        }}
       />
       <main className="main">{renderContent()}</main>
     </div>

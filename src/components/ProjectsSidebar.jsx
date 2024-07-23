@@ -2,7 +2,11 @@ import { useState } from "react";
 import { Button } from "./Button";
 import close from "../assets/close.svg";
 import open from "../assets/menu.svg";
-export function ProjectsSidebar({ handleCreateProject, projects, setPageId }) {
+export function ProjectsSidebar({
+  handleCreateProject,
+  projects,
+  setSelectedProject,
+}) {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   console.log(projects);
@@ -50,7 +54,7 @@ export function ProjectsSidebar({ handleCreateProject, projects, setPageId }) {
                   <button
                     className="navBtn"
                     onClick={() => {
-                      setPageId(id);
+                      setSelectedProject(id);
                     }}
                   >
                     {title}
