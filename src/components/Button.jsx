@@ -1,7 +1,7 @@
 import React from "react";
 export function Button({ children, ...props }) {
   return (
-    <button {...props} className="btn" type="button">
+    <button className="btn" type="button" {...props}>
       {children}
     </button>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FormRow } from "./FormRow";
-import { nanoid } from "nanoid";
+import { Button } from "./Button";
+
 export function CreateProjectForm({ handleCancel, addNewProject }) {
   const [formData, setFormData] = useState({
     title: "",
@@ -41,18 +42,12 @@ export function CreateProjectForm({ handleCancel, addNewProject }) {
       />
       <menu className="buttonGroup">
         <li>
-          <button
-            className="btn  btnClear"
-            type="button"
-            onClick={handleCancel}
-          >
+          <Button className="btn  btnClear" onClick={handleCancel}>
             cancel
-          </button>
+          </Button>
         </li>
         <li>
-          <button className="btn" type="submit">
-            save
-          </button>
+          <Button type="submit">save</Button>
         </li>
       </menu>
     </form>
