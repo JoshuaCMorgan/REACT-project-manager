@@ -1,5 +1,12 @@
 import React from "react";
-export function FormRow({ type, name, labelText, textarea, onChange }) {
+export function FormRow({
+  type,
+  name,
+  labelText,
+  textarea,
+  onChange,
+  ...props
+}) {
   return (
     <div className="form-row">
       <label className="form-label" htmlFor={name}>
@@ -20,6 +27,7 @@ export function FormRow({ type, name, labelText, textarea, onChange }) {
           name={name}
           id={name}
           onChange={onChange}
+          {...props}
           required
         />
       )}

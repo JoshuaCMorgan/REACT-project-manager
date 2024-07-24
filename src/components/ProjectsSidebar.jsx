@@ -2,14 +2,9 @@ import { useState } from "react";
 import { Button } from "./Button";
 import close from "../assets/close.svg";
 import open from "../assets/menu.svg";
-export function ProjectsSidebar({
-  handleCreateProject,
-  projects,
-  setSelectedProject,
-}) {
+export function ProjectsSidebar({ onStartProject, projects, onSelectProject }) {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  console.log(projects);
   return (
     <div className="sidebarContainer">
       <div className="fixedContainer">
@@ -41,7 +36,7 @@ export function ProjectsSidebar({
           <Button
             onClick={() => {
               isMobileMenuOpen && setMobileMenuOpen(false);
-              handleCreateProject();
+              onStartProject();
             }}
           >
             + add project
@@ -54,7 +49,7 @@ export function ProjectsSidebar({
                   <button
                     className="navBtn"
                     onClick={() => {
-                      setSelectedProject(id);
+                      onSelectProject(id);
                     }}
                   >
                     {title}

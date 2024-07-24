@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FormRow } from "./FormRow";
 import { Button } from "./Button";
 
-export function CreateProjectForm({ handleCancel, addNewProject }) {
+export function CreateProjectForm({ onCancel, addNewProject }) {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -42,7 +42,7 @@ export function CreateProjectForm({ handleCancel, addNewProject }) {
       />
       <menu className="buttonGroup">
         <li>
-          <Button className="btn  btnClear" onClick={handleCancel}>
+          <Button className="btn  btnClear" onClick={onCancel}>
             cancel
           </Button>
         </li>

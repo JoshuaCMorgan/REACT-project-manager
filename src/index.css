@@ -82,6 +82,14 @@ body {
   line-height: 1;
 }
 
+.contentContainer {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  background: var(--background-secondary-color);
+  padding: 2rem 2.5rem;
+  margin: 5rem auto;
+}
+
 /* form */
 
 .form {
@@ -123,7 +131,7 @@ body {
   border-bottom: 3px solid var(--primary-400);
 }
 
-.form-input .form-input,
+.form-input,
 .form-select,
 .form-btn {
   height: 35px;
@@ -142,6 +150,7 @@ body {
 
 .title {
   text-transform: capitalize;
+  align-content: center;
 }
 
 header > .title {
@@ -361,7 +370,7 @@ Button
   transition: var(--transition);
   text-transform: capitalize;
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .btn:hover {
@@ -405,4 +414,78 @@ Button
 .btnClear:hover {
   background: none;
   box-shadow: none;
+}
+
+/* 
+==================
+Project Page
+===================
+*/
+
+.projectHeaderContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectHeaderContent .title {
+  margin-bottom: 0.5rem;
+}
+.projectHeader {
+  border-bottom: 2px solid var(--secondary-400);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.projectTitle h2,
+.description {
+  color: var(--primary-800);
+}
+
+.date {
+  color: var(--primary-600);
+  margin-bottom: 1rem;
+}
+.projectTasks {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTasks h2 {
+  margin-bottom: 1rem;
+}
+
+.message {
+  margin-top: 0.5rem;
+}
+
+.taskInput {
+  width: 15rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--border-radius);
+  background: var(--secondary-050);
+  border: none;
+  color: var(--primary-700);
+  font-size: 1rem;
+  outline: none;
+}
+
+.taskInput {
+  height: 32px;
+}
+
+.tasks {
+  margin-top: 2rem;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+  background-color: var(--grey-100);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task p {
+  align-content: center;
+  padding-left: 1rem;
 }
