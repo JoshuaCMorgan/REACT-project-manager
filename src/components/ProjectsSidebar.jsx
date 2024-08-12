@@ -49,6 +49,7 @@ export function ProjectsSidebar({ onStartProject, projects, onSelectProject }) {
                   <button
                     className="navBtn"
                     onClick={() => {
+                      isMobileMenuOpen && setMobileMenuOpen(false);
                       onSelectProject(id);
                     }}
                   >
