@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button } from "./Button";
-import { FormRow } from "./FormRow";
 import { nanoid } from "nanoid";
 
 export function Project({ currentProject, addTask, clearTask }) {

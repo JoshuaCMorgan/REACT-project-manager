@@ -20,10 +20,6 @@ function App() {
     localStorage.setItem("projects", JSON.stringify(projects));
   }, [projects]);
 
-  function getCurrentProject() {
-    return projects.find((project) => project.id === selectedProjectId);
-  }
-
   function handleStartProject() {
     setProjectsState((prevState) => {
       return { ...prevState, currentAction: "create-project" };
@@ -50,7 +46,21 @@ function App() {
     });
   }
 
-  function handleShowProject(id) {
+  function addTask(tasks) {
+    const currentProject = getCurrentProject();
+    currentProject.tasks = tasks;
+    showProject(selectedProjectId);
+  }
+
+  function getCurrentProject() {
+    return projects.find((project) => project.id === selectedProjectId);
+  }
+
+  function removeProjectTask(taskId, project) {
+    project.tasks = project.tasks.filter((task) => task.id !== taskId);
+  }
+
+  function showProject(id) {
     setProjectsState((prevState) => {
       return {
         ...prevState,
@@ -60,18 +70,18 @@ function App() {
     });
   }
 
-  function addTask(tasks) {
+  function clearTask(taskId) {
     const currentProject = getCurrentProject();
-    currentProject.tasks = tasks;
+    removeProjectTask(taskId, currentProject);
+    showProject(currentProject.id);
   }
-
-  function clearTask(taskId, projectId) {}
 
   function handleCancelProject() {
     setProjectsState((prevState) => {
       return { ...prevState, currentAction: "nothing-selected" };
     });
   }
+
   const renderContent = () => {
     switch (currentAction) {
       case "create-project":
@@ -100,7 +110,7 @@ function App() {
       <ProjectsSidebar
         onStartProject={handleStartProject}
         projects={projects}
-        onSelectProject={handleShowProject}
+        onSelectProject={showProject}
       />
       <main className="main">{renderContent()}</main>
     </div>
