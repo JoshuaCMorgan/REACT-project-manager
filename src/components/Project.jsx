@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "./Button";
 import { nanoid } from "nanoid";
 
-export function Project({ currentProject, addTask, clearTask }) {
+export function Project({ currentProject, addTask, clearTask, deleteProject }) {
   const { id, date, title, description, tasks } = currentProject;
   const [task, setTask] = useState("");
 
@@ -24,7 +24,9 @@ export function Project({ currentProject, addTask, clearTask }) {
       <header className="projectHeader">
         <div className="projectHeaderContent">
           <h2 className="title">{title}</h2>
-          <Button className="btn btnClear">Delete</Button>
+          <Button className="btn btnClear" onClick={deleteProject}>
+            Delete
+          </Button>
         </div>
         <p className="date">{date}</p>
         <p className="description">{description}</p>

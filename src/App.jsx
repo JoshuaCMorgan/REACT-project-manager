@@ -76,6 +76,19 @@ function App() {
     showProject(currentProject.id);
   }
 
+  function deleteProject() {
+    const updatedProjects = projects.filter(
+      (project) => project.id !== selectedProjectId
+    );
+    setProjectsState(() => {
+      return {
+        currentAction: "nothing-selected",
+        selectedProjectId: undefined,
+        projects: updatedProjects,
+      };
+    });
+  }
+
   function handleCancelProject() {
     setProjectsState((prevState) => {
       return { ...prevState, currentAction: "nothing-selected" };
@@ -98,6 +111,7 @@ function App() {
             currentProject={currentProject}
             addTask={addTask}
             clearTask={clearTask}
+            deleteProject={deleteProject}
           />
         );
       default:
