@@ -176,6 +176,7 @@ page container
 */
 
 .pageContainer {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background: var(--primary-900);
