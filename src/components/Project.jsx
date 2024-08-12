@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 
 export function Project({ currentProject, addTask, clearTask, deleteProject }) {
   const { id, date, title, description, tasks } = currentProject;
+  console.log({ date });
   const [task, setTask] = useState("");
 
   function handleChange(e) {

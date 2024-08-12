@@ -32,6 +32,7 @@ function App() {
       {
         id: nanoid(),
         title: formData.title,
+        date: formData.date,
         description: formData.description,
         tasks: [],
       },

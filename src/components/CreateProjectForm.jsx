@@ -14,8 +14,17 @@ export function CreateProjectForm({ onCancel, addNewProject }) {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   }
 
+  function convertDate() {
+    let [year, month, day] = formData.date.split("-");
+
+    month = Intl.DateTimeFormat("en", { month: "short" }).format(
+      new Date(month)
+    );
+    formData.date = `${month} ${day}, ${year}`;
+  }
   function handleSubmit(event) {
     event.preventDefault();
+    convertDate();
     addNewProject(formData);
     // reset values
     event.currentTarget.reset();
