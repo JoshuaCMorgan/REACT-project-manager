@@ -490,3 +490,24 @@ Project Page
   align-content: center;
   padding-left: 1rem;
 }
+
+.dialog-modal {
+  border: none;
+  border-radius: 8px;
+  padding: 2rem;
+  background-color: var(--primary-050);
+  margin: auto;
+}
+
+.dialog-modal::backdrop {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.dialog-modal p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.dialog-modal form {
+  text-align: right;
+}
