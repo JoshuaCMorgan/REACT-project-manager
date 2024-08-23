@@ -439,6 +439,7 @@ Project Page
 .projectTitle h2,
 .description {
   color: var(--primary-800);
+  white-space: pre-wrap;
 }
 
 .date {
