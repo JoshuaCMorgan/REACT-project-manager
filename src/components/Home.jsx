@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 import React from "react";
 import task from "../assets/task.svg";
-export function Home({ onStartProject }) {
+export function NoProjectSelected({ onStartProject }) {
   return (
     <section className="createContainer">
       <img className="imgTask" src={task} alt="task" />
