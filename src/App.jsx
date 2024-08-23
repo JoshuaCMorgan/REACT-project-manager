@@ -1,6 +1,6 @@
 import { Project } from "./components/Project";
 import { useState, useEffect } from "react";
-import { Home } from "./components/Home";
+import { NoProjectSelected } from "./components/NoProjectSelected";
 import { ProjectsSidebar } from "./components/ProjectsSidebar";
 import { NewProject } from "./components/NewProject";
 import { nanoid } from "nanoid";
@@ -116,7 +116,7 @@ function App() {
           />
         );
       default:
-        return <Home onStartProject={handleStartProject} />;
+        return <NoProjectSelected onStartProject={handleStartProject} />;
     }
   };
 

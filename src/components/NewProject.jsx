@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { FormRow } from "./FormRow";
+import { FormRow } from "./NoProjectSelected";
 import { Button } from "./Button";
 import Modal from "./Modal";
 export function NewProject({ onCancel, addNewProject }) {
