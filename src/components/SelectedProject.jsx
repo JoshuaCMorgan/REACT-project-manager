@@ -8,7 +8,15 @@ export function SelectedProject({
   clearTask,
   deleteProject,
 }) {
-  const { id, date, title, description, tasks } = currentProject;
+  const { id, title, date, description, tasks } = currentProject;
+  console.log({ date });
+
+  const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   const [task, setTask] = useState("");
 
   function handleChange(e) {
@@ -33,7 +41,7 @@ export function SelectedProject({
             Delete
           </Button>
         </div>
-        <p className="date">{date}</p>
+        <p className="date">{formattedDate}</p>
         <p className="description">{description}</p>
       </header>
       <section className="projectTasks">

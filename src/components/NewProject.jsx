@@ -1,19 +1,9 @@
 import { useState, useRef } from "react";
-import { FormRow } from "./NoProjectSelected";
+import { FormRow } from "./FormRow";
 import { Button } from "./Button";
 import Modal from "./Modal";
 export function NewProject({ onCancel, addNewProject }) {
   const modal = useRef();
-
-  function convertDate(formData) {
-    let [year, month, day] = formData.date.split("-");
-
-    month = Intl.DateTimeFormat("en", { month: "short" }).format(
-      new Date(month)
-    );
-    formData.date = `${month} ${day}, ${year}`;
-    return formData;
-  }
 
   function checkEmptyValues(formData) {
     return Object.values(formData).every((value) => value.length > 0);
@@ -30,8 +20,7 @@ export function NewProject({ onCancel, addNewProject }) {
       return false;
     }
 
-    const updatedFormToObject = convertDate(formToObject);
-    addNewProject(updatedFormToObject);
+    addNewProject(formToObject);
   }
 
   return (

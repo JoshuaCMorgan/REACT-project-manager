@@ -1,6 +1,6 @@
 import { SelectedProject } from "./components/SelectedProject";
 import { useState, useEffect } from "react";
-import { NoProjectSelected } from "./components/NoProjectSelected";
+import { NoProjectSelected } from "./components/NoProjectedSelected";
 import { ProjectsSidebar } from "./components/ProjectsSidebar";
 import { NewProject } from "./components/NewProject";
 import { nanoid } from "nanoid";
