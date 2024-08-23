@@ -2,7 +2,12 @@ import { useState } from "react";
 import { Button } from "./Button";
 import { nanoid } from "nanoid";
 
-export function Project({ currentProject, addTask, clearTask, deleteProject }) {
+export function SelectedProject({
+  currentProject,
+  addTask,
+  clearTask,
+  deleteProject,
+}) {
   const { id, date, title, description, tasks } = currentProject;
   const [task, setTask] = useState("");
 

@@ -1,4 +1,4 @@
-import { Project } from "./components/Project";
+import { SelectedProject } from "./components/SelectedProject";
 import { useState, useEffect } from "react";
 import { NoProjectSelected } from "./components/NoProjectSelected";
 import { ProjectsSidebar } from "./components/ProjectsSidebar";
@@ -108,7 +108,7 @@ function App() {
       case "project-page":
         const currentProject = getCurrentProject();
         return (
-          <Project
+          <SelectedProject
             currentProject={currentProject}
             addTask={addTask}
             clearTask={clearTask}
