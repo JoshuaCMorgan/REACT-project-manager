@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { FormRow } from "./FormRow";
 import { Button } from "./Button";
 import Modal from "./Modal";
-export function CreateProjectForm({ onCancel, addNewProject }) {
+export function NewProject({ onCancel, addNewProject }) {
   const [formData, setFormData] = useState({
     title: "",
     description: "",

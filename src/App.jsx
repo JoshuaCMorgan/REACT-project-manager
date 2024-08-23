@@ -2,7 +2,7 @@ import { Project } from "./components/Project";
 import { useState, useEffect } from "react";
 import { Home } from "./components/Home";
 import { ProjectsSidebar } from "./components/ProjectsSidebar";
-import { CreateProjectForm } from "./components/CreateProjectForm";
+import { NewProject } from "./components/NewProject";
 import { nanoid } from "nanoid";
 
 const currentProjects = JSON.parse(localStorage.getItem("projects")) ?? [];
@@ -100,7 +100,7 @@ function App() {
     switch (currentAction) {
       case "create-project":
         return (
-          <CreateProjectForm
+          <NewProject
             onCancel={handleCancelProject}
             addNewProject={handleAddNewProject}
           />
