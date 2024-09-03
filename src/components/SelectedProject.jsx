@@ -1,3 +1,4 @@
+import { NewTask } from "./NewTask";
 import { useState } from "react";
 import { Button } from "./Button";
 import { nanoid } from "nanoid";
@@ -9,7 +10,6 @@ export function SelectedProject({
   deleteProject,
 }) {
   const { id, title, date, description, tasks } = currentProject;
-  console.log({ date });
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -17,21 +17,6 @@ export function SelectedProject({
     day: "numeric",
   });
 
-  const [task, setTask] = useState("");
-
-  function handleChange(e) {
-    setTask(e.target.value);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (task) {
-      addTask([...tasks, { id: nanoid(), desc: task }], id);
-      setTask("");
-    }
-    // reset values
-    e.currentTarget.reset();
-  }
   return (
     <div className="contentContainer">
       <header className="projectHeader">
@@ -46,17 +31,7 @@ export function SelectedProject({
       </header>
       <section className="projectTasks">
         <h2>Tasks</h2>
-        <form onSubmit={handleSubmit} className="taskInputContainer">
-          <input
-            type="text"
-            className="taskInput"
-            value={task}
-            onChange={handleChange}
-          />
-          <Button type="submit" className="btn btnClear">
-            add task
-          </Button>
-        </form>
+        <NewTask addTask={addTask} currentProject={currentProject} />
         <div className="showTasks">
           {!tasks.length > 0 ? (
             <p className="message">This project does not have any tasks yet.</p>
