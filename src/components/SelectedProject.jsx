@@ -7,6 +7,7 @@ export function SelectedProject({
   clearTask,
   deleteProject,
 }) {
+  const { title, description, date } = currentProject;
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
